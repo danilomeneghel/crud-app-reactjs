@@ -25,6 +25,12 @@ $ npm install
 $ npm start
 ```
 
+## Demonstração
+
+Para ver o App rodando, acesse: 
+
+https://vcjmn.csb.app/
+
 ## Licença
 
 Projeto licenciado sob <a href="LICENSE">The MIT License (MIT)</a>.
