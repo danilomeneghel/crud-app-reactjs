@@ -11,29 +11,30 @@ const EditUserForm = props => {
   )
   
   const handleInputChange = event => {
-    const { name, value } = event.target
+	const { name, value } = event.target
 
-    setUser({ ...user, [name]: value })
+	setUser({ ...user, [name]: value })
   }
 
+  const result = Object.keys(user).map(function(key) {
+	return user[key];
+  });
+	
   return (
     <form
       onSubmit={event => {
         event.preventDefault()
 
-        props.updateUser(user.id, user)
+        props.updateUser(user[0], result)
       }}
     >
       <label>Nome</label>
-      <input type="text" name="name" value={user.name} onChange={handleInputChange} />
-      <label>Usuário</label>
-      <input type="text" name="username" value={user.username} onChange={handleInputChange} />
+      <input type="text" name="name" value={user[1]} onChange={handleInputChange} /><br />
+      <label>Usuario</label>
+      <input type="text" name="username" value={user[2]} onChange={handleInputChange} /><br />
 	  <label>E-mail</label>
-      <input type="text" name="email" value={user.email} onChange={handleInputChange} />
-      <button>Update user</button>
-      <button onClick={() => props.setEditing(false)} className="button muted-button">
-        Cancel
-      </button>
+      <input type="text" name="email" value={user[3]} onChange={handleInputChange} /><br /><br />
+      <button>Salvar</button>
     </form>
   )
 }
