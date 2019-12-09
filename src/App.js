@@ -99,12 +99,12 @@ class App extends React.Component {
 		
 		const deleteUser = id => {
 			this.setState({ edit: false });
-			this.setState({ array: this.state.array.filter(user => user.id !== id) });
+			this.setState({ array: data.filter(user => user.id !== id) });
 		};
 		
 		const updateUser = (id, updatedUser) => {
 			this.setState({ edit: false });
-			this.setState({ array: this.state.array.map(user => (user.id === id ? updatedUser : data)) });
+			this.setState({ array: data.map(user => (user[0] === id ? updatedUser : user)) });
 		};
 		
 		const editButton = user => {

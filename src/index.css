@@ -13,8 +13,8 @@ code {
 }
 
 .modal {
+	width: 440px;
 	background-color: white;
-	width: 400px;
 	border: 2px solid #000;
 	padding: 16px 32px 24px;
 	position: absolute;
@@ -25,4 +25,10 @@ code {
 
 .button {
 	margin: 10px;
+}
+
+@media (max-width: 720px) {
+	.modal {
+		width: 80%;
+	}
 }
