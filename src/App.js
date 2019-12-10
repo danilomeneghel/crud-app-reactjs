@@ -79,23 +79,24 @@ class App extends React.Component {
 			this.array = this.state.results.map(result => [result.id, result.name, result.username, result.email, '']);
 		}
 		
+		if(!!this.state.array) {
+			data = this.state.array;
+		} else {
+			data = this.array;
+		}
+		
 		// CRUD operations
 		const addUser = user => {
-			user.unshift(this.array.length + 1);
-			user.push('');			
-			this.setState({ array: this.array.concat([user]) });			
+			user.id = data.length + 1;
+			const addUser = [user.id, user.name, user.username, user.email, ''];
+			this.setState({ array: data.concat([addUser]) });
+			handleClose();
 		};
 		
 		const addButton = () => {
 			this.setState({ edit: false });
 			handleOpen();
 		};
-		
-		if(!!this.state.array) {
-			data = this.state.array;
-		} else {
-			data = this.array;
-		}
 		
 		const deleteUser = id => {
 			this.setState({ edit: false });
@@ -104,12 +105,14 @@ class App extends React.Component {
 		
 		const updateUser = (id, updatedUser) => {
 			this.setState({ edit: false });
-			this.setState({ array: data.map(user => (user[0] === id ? updatedUser : user)) });
+			const editUser = [updatedUser.id, updatedUser.name, updatedUser.username, updatedUser.email, ''];
+			this.setState({ array: data.map(user => (user[0] === id ? editUser : user)) });
+			handleClose();
 		};
 		
 		const editButton = user => {
 			this.setState({ edit: true });
-			this.setState({ arrayEdit: [user[0], user[1], user[2], user[3], ''] });
+			this.setState({ arrayEdit: {id: user[0], name: user[1], username: user[2], email: user[3], acao: ''} });
 			handleOpen();
 		};
 		
