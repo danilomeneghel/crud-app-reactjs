@@ -10,24 +10,13 @@ const styles = () => ({
   root: {
     flexGrow: 1,
   },
-  paper: {
-	top: '50%',
-    left: '55%',
-    transform: 'translate(-50%, -55%)',
-    width: '400px',
-    border: '2px solid #000',
-    padding: '16px 32px 24px',
-    position: 'absolute',
-    boxShadow: '0px 3px 5px -1px rgba(0,0,0,0.2), 0px 5px 8px 0px rgba(0,0,0,0.14), 0px 1px 14px 0px rgba(0,0,0,0.12)',
-    backgroundColor: '#fff',
-  },
   menuButton: {
     marginRight: 36,
   },
   title: {
-	flexGrow: 1,
+    flexGrow: 1,
     display: 'block',
-	color: "#fff"
+    color: "#fff"
   },
 });
 
@@ -143,7 +132,7 @@ class App extends React.Component {
 		const options = {
 		  filter: true,
 		  filterType: "dropdown",
-		  responsive: "scroll"
+		  responsive: ""
 		};
 		
 		return (
