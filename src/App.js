@@ -149,7 +149,7 @@ class App extends React.Component {
 				</AppBar>
 				
 				<button type="button" className="button" onClick={() => { addButton() }}>Adicionar</button>
-								
+				
 				<MUIDataTable
 				title={"Lista de Usuários"}
 				data={data}

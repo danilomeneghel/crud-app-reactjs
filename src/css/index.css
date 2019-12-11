@@ -27,8 +27,14 @@ code {
 	margin: 10px;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 740px) {
 	.modal {
 		width: 80%;
+	}
+	.MuiPaper-root {
+		height: 100%;
+		overflow: auto;
+		max-height: 499px;
+		overflow-x: auto;
 	}
 }
